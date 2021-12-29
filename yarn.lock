@@ -1119,6 +1119,17 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
+"@jest/types@^27.4.2":
+  version "27.4.2"
+  resolved "https://registry.npmmirror.com/@jest/types/download/@jest/types-27.4.2.tgz#96536ebd34da6392c2b7c7737d693885b5dd44a5"
+  integrity sha512-j35yw0PMTPpZsUoOBiuHzr1zTYoad1cVIE0ajEjcrJONxxrko/IRGKkXx3os0Nsi4Hu3+5VmDbVfq5WhG/pWAg==
+  dependencies:
+    "@types/istanbul-lib-coverage" "^2.0.0"
+    "@types/istanbul-reports" "^3.0.0"
+    "@types/node" "*"
+    "@types/yargs" "^16.0.0"
+    chalk "^4.0.0"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.npm.taobao.org/@mrmlnc/readdir-enhanced/download/@mrmlnc/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -1278,6 +1289,13 @@
     "@types/istanbul-lib-coverage" "*"
     "@types/istanbul-lib-report" "*"
 
+"@types/istanbul-reports@^3.0.0":
+  version "3.0.1"
+  resolved "https://registry.npmmirror.com/@types/istanbul-reports/download/@types/istanbul-reports-3.0.1.tgz?cache=0&sync_timestamp=1637266678597&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fistanbul-reports%2Fdownload%2F%40types%2Fistanbul-reports-3.0.1.tgz#9153fe98bba2bd565a63add9436d6f0d7f8468ff"
+  integrity sha1-kVP+mLuivVZaY63ZQ21vDX+EaP8=
+  dependencies:
+    "@types/istanbul-lib-report" "*"
+
 "@types/jest@24.0.25":
   version "24.0.25"
   resolved "https://registry.npmmirror.com/@types/jest/download/@types/jest-24.0.25.tgz#2aba377824ce040114aa906ad2cac2c85351360f"
@@ -1428,6 +1446,13 @@
   version "13.0.12"
   resolved "https://registry.npmmirror.com/@types/yargs/download/@types/yargs-13.0.12.tgz#d895a88c703b78af0465a9de88aa92c61430b092"
   integrity sha1-2JWojHA7eK8EZaneiKqSxhQwsJI=
+  dependencies:
+    "@types/yargs-parser" "*"
+
+"@types/yargs@^16.0.0":
+  version "16.0.4"
+  resolved "https://registry.npmmirror.com/@types/yargs/download/@types/yargs-16.0.4.tgz#26aad98dd2c2a38e421086ea9ad42b9e51642977"
+  integrity sha1-JqrZjdLCo45CEIbqmtQrnlFkKXc=
   dependencies:
     "@types/yargs-parser" "*"
 
@@ -3086,6 +3111,11 @@ ci-info@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmmirror.com/ci-info/download/ci-info-2.0.0.tgz#67a9e964be31a51e15e5010d58e6f12834002f46"
   integrity sha1-Z6npZL4xpR4V5QENWObxKDQAL0Y=
+
+ci-info@^3.2.0:
+  version "3.3.0"
+  resolved "https://registry.npmmirror.com/ci-info/download/ci-info-3.3.0.tgz#b4ed1fb6818dea4803a55c623041f9165d2066b2"
+  integrity sha512-riT/3vI5YpVH6/qomlDnJow6TBee2PBKSEpx3O32EGPYbWGIRsIlGRms3Sm74wYE1JMo8RnO04Hb12+v1J5ICw==
 
 cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
   version "1.0.4"
@@ -5267,7 +5297,7 @@ globby@^9.2.0:
     pify "^4.0.1"
     slash "^2.0.0"
 
-graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0:
+graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.4:
   version "4.2.8"
   resolved "https://registry.npmmirror.com/graceful-fs/download/graceful-fs-4.2.8.tgz#e412b8d33f5e006593cbd3cee6df9f2cebbe802a"
   integrity sha1-5BK40z9eAGWTy9PO5t+fLOu+gCo=
@@ -6587,6 +6617,18 @@ jest-util@^24.0.0, jest-util@^24.9.0:
     mkdirp "^0.5.1"
     slash "^2.0.0"
     source-map "^0.6.0"
+
+jest-util@^27.4.2:
+  version "27.4.2"
+  resolved "https://registry.npmmirror.com/jest-util/download/jest-util-27.4.2.tgz#ed95b05b1adfd761e2cda47e0144c6a58e05a621"
+  integrity sha512-YuxxpXU6nlMan9qyLuxHaMMOzXAl5aGZWCSzben5DhLHemYQxCc4YK+4L3ZrCutT8GPQ+ui9k5D8rUJoDioMnA==
+  dependencies:
+    "@jest/types" "^27.4.2"
+    "@types/node" "*"
+    chalk "^4.0.0"
+    ci-info "^3.2.0"
+    graceful-fs "^4.2.4"
+    picomatch "^2.2.3"
 
 jest-validate@^24.9.0:
   version "24.9.0"
