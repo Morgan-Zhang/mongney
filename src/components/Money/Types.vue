@@ -1,10 +1,10 @@
 <template>
   <div>
     <ul class="types">
-      <li :class="value==='-' &&'selected'"
+      <li :class="value === '-' && 'selected'"
           @click="selectType('-')">支出
       </li>
-      <li :class="value==='+' && 'selected'"
+      <li :class="value === '+' && 'selected'"
           @click="selectType('+')">收入
       </li>
     </ul>
@@ -17,10 +17,9 @@ import {Component, Prop} from 'vue-property-decorator';
 
 @Component
 export default class Types extends Vue {
+  @Prop() readonly value!: string;
 
-  @Prop() readonly value!:string;
-
-  selectType(type: string) {   //type只能是-和+中间的一个
+  selectType(type: string) {
     if (type !== '-' && type !== '+') {
       throw new Error('type is unknown');
     }
@@ -35,7 +34,6 @@ export default class Types extends Vue {
   display: flex;
   text-align: center;
   font-size: 24px;
-
   > li {
     width: 50%;
     height: 64px;
@@ -43,7 +41,6 @@ export default class Types extends Vue {
     justify-content: center;
     align-items: center;
     position: relative;
-
     &.selected::after {
       content: '';
       position: absolute;
@@ -55,4 +52,5 @@ export default class Types extends Vue {
     }
   }
 }
+
 </style>

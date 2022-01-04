@@ -1,6 +1,6 @@
 <template>
   <div>
-       <label class="notes">
+    <label class="notes">
       <span class="name">备注</span>
       <input type="text"
              v-model="value"
@@ -31,11 +31,9 @@ export default class Notes extends Vue {
   padding-left: 16px;
   display: flex;
   align-items: center;
-
   .name {
     padding-right: 16px;
   }
-
   input {
     height: 64px;
     flex-grow: 1;
