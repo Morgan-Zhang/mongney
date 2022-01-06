@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Layout class="layout">
     <div class="tags">
       <router-link
           class="tag"
@@ -42,6 +42,9 @@ export default class Labels extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.layout{
+  background: #E5E5E5
+}
 .tags {
   background: white;
   font-size: 16px;
