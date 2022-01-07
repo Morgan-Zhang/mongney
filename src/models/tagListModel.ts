@@ -57,4 +57,5 @@ const tagListModel: TagListModel = {
     window.localStorage.setItem(localStorageKeyName, JSON.stringify(this.data));
   }
 };
+
 export default tagListModel;
