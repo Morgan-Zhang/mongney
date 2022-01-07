@@ -4,9 +4,9 @@
       <button @click="create">新增标签</button>
     </div>
     <ul class="current">
-      <li v-for="tag in dataSource" :key="tag"
+      <li v-for="tag in dataSource" :key="tag.id"
           :class="{selected: selectedTags.indexOf(tag)>=0}"
-          @click="toggle(tag)">{{tag}}
+          @click="toggle(tag)">{{tag.name}}
       </li>
     </ul>
   </div>
@@ -29,7 +29,7 @@ export default class Tags extends Vue {
     } else {
       this.selectedTags.push(tag);
     }
-    this.$emit('update:value', this.selectedTags)
+    this.$emit('update:value', this.selectedTags);
   }
 
   create() {
@@ -54,7 +54,6 @@ export default class Tags extends Vue {
   display: flex;
   flex-direction: column-reverse;
   > .current {
-
     display: flex;
     flex-wrap: wrap;
     > li {
