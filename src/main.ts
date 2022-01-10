@@ -16,6 +16,10 @@ Vue.component('Icon', Icon);
 // 最后-----引入全局组件
 
 window.tagList = tagListModel.fetch();
+window.findTag = (id: string) => {
+  return window.tagList.filter(t => t.id === id)[0];
+
+};
 window.createTag = (name: string) => {
   const message = tagListModel.create(name);
   if (message === 'duplicated') {
@@ -24,8 +28,12 @@ window.createTag = (name: string) => {
     window.alert('添加成功');
   }
 };
-window.removeTag=(id:string)=>{
+window.removeTag = (id: string) => {
   return tagListModel.remove(id);
+};
+window.updateTag = (id: string, name: string) => {
+  return tagListModel.update(id, name);
+
 };
 
 new Vue({
