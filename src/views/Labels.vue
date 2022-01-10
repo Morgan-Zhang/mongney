@@ -1,17 +1,18 @@
 <template>
-  <Layout class="layout">
+  <Layout>
     <div class="tags">
-      <router-link
-          class="tag"
-          v-for="tag in tags"
-          :key="tag.id"
-          :to="`/labels/edit/${tag.id}`">
+      <router-link class="tag"
+                   v-for="tag in tags" :key="tag.id"
+                   :to="`/labels/edit/${tag.id}`">
         <span>{{ tag.name }}</span>
         <Icon name="right"/>
       </router-link>
     </div>
     <div class="createTag-wrapper">
-      <Button class="createTag" @click="createTag">新建标签</Button>
+      <Button class="createTag"
+              @click="createTag">
+        新建标签
+      </Button>
     </div>
   </Layout>
 </template>
@@ -21,8 +22,11 @@
 import Vue from 'vue';
 import {Component} from 'vue-property-decorator';
 import tagListModel from '@/models/tagListModel';
+import Button from '@/components/Button.vue';
 
-@Component
+@Component({
+  components: {Button}
+})
 export default class Labels extends Vue {
   tags = window.tagList;
 
@@ -41,9 +45,6 @@ export default class Labels extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.layout{
-  background: #E5E5E5
-}
 .tags {
   background: white;
   font-size: 16px;
