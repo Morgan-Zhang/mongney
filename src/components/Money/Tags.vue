@@ -4,10 +4,9 @@
       <button @click="create">新增标签</button>
     </div>
     <ul class="current">
-      <li v-for="tag in tagList"
-          :key="tag.id"
+      <li v-for="tag in tagList" :key="tag.id"
           :class="{selected: selectedTags.indexOf(tag)>=0}"
-          @click="toggle(tag)">{{ tag.name }}
+          @click="toggle(tag)">{{tag.name}}
       </li>
     </ul>
   </div>
@@ -16,12 +15,18 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import {Component} from 'vue-property-decorator';
-import store from '@/store/index2';
+import {Component, Prop} from 'vue-property-decorator';
 
-@Component
+@Component({
+  computed: {
+    tagList(){
+      // TODO
+      // return this.$store.fetchTags();
+      return []
+    }
+  }
+})
 export default class Tags extends Vue {
-tagList=store.fetchTags()
   selectedTags: string[] = [];
 
   toggle(tag: string) {
@@ -36,12 +41,9 @@ tagList=store.fetchTags()
 
   create() {
     const name = window.prompt('请输入标签名');
-    if (!name) {
-      return  window.alert('标签名不能为空');
-    }
-     store.createTag(name)
-
-
+    if (!name) { return window.alert('标签名不能为空'); }
+    // TODO
+    // store.createTag(name);
   }
 }
 </script>
@@ -54,11 +56,9 @@ tagList=store.fetchTags()
   flex-grow: 1;
   display: flex;
   flex-direction: column-reverse;
-
   > .current {
     display: flex;
     flex-wrap: wrap;
-
     > li {
       $bg: #d9d9d9;
       background: $bg;
@@ -69,17 +69,14 @@ tagList=store.fetchTags()
       padding: 0 16px;
       margin-right: 12px;
       margin-top: 4px;
-
       &.selected {
         background: darken($bg, 50%);
         color: white;
       }
     }
   }
-
   > .new {
     padding-top: 16px;
-
     button {
       background: transparent;
       border: none;

@@ -1,9 +1,9 @@
 <template>
-  <Layout class="layout">
+  <Layout>
     <div class="navBar">
       <Icon class="leftIcon" name="left" @click="goBack"/>
       <span class="title">编辑标签</span>
-      <span class="rightIcon"></span>
+      <span class="rightIcon"/>
     </div>
     <div class="form-wrapper">
       <FormItem :value="tag.name"
@@ -21,16 +21,17 @@ import Vue from 'vue';
 import {Component} from 'vue-property-decorator';
 import FormItem from '@/components/Money/FormItem.vue';
 import Button from '@/components/Button.vue';
-import store from '@/store/index2';
 
 @Component({
   components: {Button, FormItem}
 })
 export default class EditLabel extends Vue {
-  tag?: { id: string, name: string } = undefined;
+  tag?: Tag = undefined;
 
   created() {
-    this.tag = store.findTag(this.$route.params.id);
+
+    // TODO
+    // this.tag =  // store.findTag(this.$route.params.id);
     if (!this.tag) {
       this.$router.replace('/404');
     }
@@ -38,17 +39,20 @@ export default class EditLabel extends Vue {
 
   update(name: string) {
     if (this.tag) {
-      store.updateTag(this.tag.id, name);
+      // TODO
+      // store.updateTag(this.tag.id, name);
     }
   }
 
   remove() {
     if (this.tag) {
-      if (store.removeTag(this.tag.id)) {
-        this.$router.back();
-      } else {
-        window.alert('删除失败');
-      }
+      // TODO
+      return
+      // if (store.removeTag(this.tag.id)) {
+      //   this.$router.back();
+      // } else {
+      //   window.alert('删除失败');
+      // }
     }
   }
 
@@ -59,10 +63,6 @@ export default class EditLabel extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.layout {
-  background: #E5E5E5
-}
-
 .navBar {
   text-align: center;
   font-size: 16px;
@@ -71,26 +71,21 @@ export default class EditLabel extends Vue {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   > .title {
   }
-
   > .leftIcon {
     width: 24px;
     height: 24px;
   }
-
   > .rightIcon {
     width: 24px;
     height: 24px;
   }
 }
-
 .form-wrapper {
   background: white;
   margin-top: 8px;
 }
-
 .button-wrapper {
   text-align: center;
   padding: 16px;

@@ -1,8 +1,6 @@
 <template>
-
   <div id="app">
     <router-view/>
-
   </div>
 </template>
 
@@ -17,6 +15,6 @@ body{
   line-height: 1.5;
   font-size: 16px;
   font-family: $font-hei;
+  background: #F5F5F5;
 }
-
 </style>
