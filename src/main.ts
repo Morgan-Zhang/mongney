@@ -12,7 +12,6 @@ Vue.config.productionTip = false;
 Vue.component('Nav', Nav);
 Vue.component('Layout', Layout);
 Vue.component('Icon', Icon);
-// 最后-----引入全局组件
 
 new Vue({
   router,
